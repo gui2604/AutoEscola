@@ -1,4 +1,4 @@
-# Spring Boot Project – Autoescola - Checkpoint 1 - 6º Semestre
+# Spring Boot Project – Autoescola - Checkpoint 3 - 6º Semestre
 
 ## 🚀 3ESPV - Engenharia de Software 3º Ano
 ### 🧑‍💻 Guilherme Barreto Santos - RM97674
@@ -15,7 +15,7 @@ O sistema implementa funcionalidades de:
 
 - Cadastro, listagem, atualização e exclusão de instrutores;
 - Cadastro, listagem, atualização e exclusão de alunos;
-- Agendamento e cancelamento de instruções (planejado para próximas etapas do projeto);
+- Agendamento e cancelamento de instruções;
 - Controle de dados ativos/inativos (exclusão lógica).
 
 ---
@@ -50,12 +50,18 @@ src/main/java/br/com/fiap3espv/spring_boot_project
 │ ├─ Especialidade.java # Enum de especialidades
 │ ├─ Instrutor.java # Entidade Instrutor
 │ └─ InstrutorRepository.java # Repositório JPA
+├─ instrucao/
+│ ├─ DadosAgendamentoInstrucao.java 
+│ ├─ DadosCancelamentoInstrucao.java
+│ ├─ DadosDetalhamentoInstrucao.java
+│ ├─ InstrucaoService.java
+│ ├─ InstrucaoService.java
+│ ├─ MotivoCancelamento.java
+│ └─ StatusInstrucao.java
 ├─ endereco/
 │ ├─ DadosEndereco.java # DTO de endereço
 │ └─ Endereco.java # Embeddable para endereço
 ```
-
-> Observação: A implementação de **alunos** seguirá a mesma estrutura dos instrutores.
 
 ---
 
@@ -69,6 +75,7 @@ O projeto utiliza **MySQL** e o controle de migrations é feito com **Flyway**.
 2. `V2__alter-table-instrutores-add-column-telefone.sql` – Adição do campo `telefone`
 3. `V3__alter-table-instrutores-add-column-ativo.sql` – Adição do campo `ativo`
 4. `V4__create-table-alunos.sql` – Criação da tabela `alunos`
+5. `V5__create-table-instrucoes.sql`
 
 > Todas as migrations são aplicadas automaticamente pelo Spring Boot ao iniciar o projeto.
 
